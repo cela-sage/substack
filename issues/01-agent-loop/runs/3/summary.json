@@ -1,0 +1,210 @@
+{
+  "model": "claude-opus-5-5",
+  "checks": {
+    "outputFromMessages": 978,
+    "outputFromResult": 978,
+    "costFromParts": 0.10163739999999999,
+    "costReported": 0.1016374,
+    "reportCoversEarlierSessions": false,
+    "messages": 4,
+    "numTurns": 5,
+    "permissionDenials": 0
+  },
+  "callsByKind": {
+    "look": 1,
+    "run": 2,
+    "change": 1
+  },
+  "callsByName": {
+    "Bash": 3,
+    "Edit": 1
+  },
+  "spanMsByKind": {
+    "look": 3378,
+    "run": 6653,
+    "change": 3736
+  },
+  "directorSplit": {
+    "readGrepGlob": 0,
+    "editWriteBash": 4
+  },
+  "tokens": {
+    "baselinePerTurn": 17231,
+    "baselineResent": 68924,
+    "growth": 5911,
+    "readTotal": 74835,
+    "cachedTotal": 66227,
+    "written": 978,
+    "parts": {
+      "input": 8,
+      "cacheRead": 66227,
+      "cacheWrite5m": 0,
+      "cacheWrite1h": 8600,
+      "output": 978
+    },
+    "setup": {
+      "stored": 5459,
+      "read": 63461
+    },
+    "project": {
+      "stored": 3141,
+      "read": 2766
+    }
+  },
+  "costUsd": {
+    "input": 0.000032,
+    "cacheRead": 0.013245400000000001,
+    "cacheWrite": 0.0688,
+    "output": 0.01956
+  },
+  "costBySource": {
+    "setup": 0.056364199999999996,
+    "project": 0.0256812,
+    "written": 0.01956,
+    "uncached": 0.000032
+  },
+  "costIfDeskEmpty": {
+    "setup": 0.14818620000000002,
+    "project": 0.0256812,
+    "written": 0.01956,
+    "uncached": 0.000032
+  },
+  "perTurn": [
+    {
+      "context": 17231,
+      "growth": 0,
+      "read": 11770,
+      "stored": 5459,
+      "output": 147,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 17562,
+      "growth": 331,
+      "read": 17229,
+      "stored": 331,
+      "output": 170,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 19670,
+      "growth": 2439,
+      "read": 17560,
+      "stored": 2108,
+      "output": 445,
+      "tools": [
+        "Edit",
+        "Bash"
+      ]
+    },
+    {
+      "context": 20372,
+      "growth": 3141,
+      "read": 19668,
+      "stored": 702,
+      "output": 216,
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "look",
+      "name": "Bash",
+      "what": "git ls-files | head -50 && cat package.json 2>/dev/null",
+      "spanMs": 3378,
+      "modelMs": 2934,
+      "toolMs": 444,
+      "messageOutput": 147,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "node --test 2>&1 | head -60; for f in src/*.js test/*.js; do echo \"== $f\"; cat $f; done",
+      "spanMs": 2028,
+      "modelMs": 1924,
+      "toolMs": 104,
+      "messageOutput": 170,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "change",
+      "name": "Edit",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.g5xiWCOM4w/src/offset.js",
+      "spanMs": 3736,
+      "modelMs": 3729,
+      "toolMs": 7,
+      "messageOutput": 445,
+      "sharedWith": 1,
+      "isError": false
+    },
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "node --test 2>&1 | grep -E \"^(✔|✖|ℹ (pass|fail))\"",
+      "spanMs": 4625,
+      "modelMs": 4525,
+      "toolMs": 100,
+      "messageOutput": 445,
+      "sharedWith": 1,
+      "isError": false
+    }
+  ],
+  "trips": [
+    {
+      "startMs": 0,
+      "endMs": 3378,
+      "calls": [
+        {
+          "kind": "look",
+          "issuedMs": 2934,
+          "doneMs": 3378
+        }
+      ]
+    },
+    {
+      "startMs": 3378,
+      "endMs": 5406,
+      "calls": [
+        {
+          "kind": "run",
+          "issuedMs": 5302,
+          "doneMs": 5406
+        }
+      ]
+    },
+    {
+      "startMs": 5406,
+      "endMs": 10031,
+      "calls": [
+        {
+          "kind": "change",
+          "issuedMs": 9135,
+          "doneMs": 9142
+        },
+        {
+          "kind": "run",
+          "issuedMs": 9931,
+          "doneMs": 10031
+        }
+      ]
+    },
+    {
+      "startMs": 10031,
+      "endMs": 13106,
+      "calls": []
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "durationMs": 12527,
+    "apiMs": 11837,
+    "costUsd": 0.1016374
+  }
+}

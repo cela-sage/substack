@@ -1,0 +1,124 @@
+{
+  "model": "claude-opus-5-5",
+  "checks": {
+    "outputFromMessages": 458,
+    "outputFromResult": 1240,
+    "costFromParts": 0.0235352,
+    "costReported": 0.1175694,
+    "reportCoversEarlierSessions": true,
+    "messages": 2,
+    "numTurns": 2,
+    "permissionDenials": 0
+  },
+  "callsByKind": {
+    "change": 1
+  },
+  "callsByName": {
+    "Bash": 1
+  },
+  "spanMsByKind": {
+    "change": 4628
+  },
+  "directorSplit": {
+    "readGrepGlob": 0,
+    "editWriteBash": 1
+  },
+  "tokens": {
+    "baselinePerTurn": 20241,
+    "baselineResent": 40482,
+    "growth": 469,
+    "readTotal": 40951,
+    "cachedTotal": 40156,
+    "written": 458,
+    "parts": {
+      "input": 4,
+      "cacheRead": 40156,
+      "cacheWrite5m": 0,
+      "cacheWrite1h": 791,
+      "output": 458
+    },
+    "setup": {
+      "stored": 322,
+      "read": 40156
+    },
+    "project": {
+      "stored": 469,
+      "read": 0
+    }
+  },
+  "costUsd": {
+    "input": 0.000016,
+    "cacheRead": 0.0080312,
+    "cacheWrite": 0.006328,
+    "output": 0.00916
+  },
+  "costBySource": {
+    "setup": 0.0106072,
+    "project": 0.003752,
+    "written": 0.00916,
+    "uncached": 0.000016
+  },
+  "costIfDeskEmpty": {
+    "setup": 0.16597579999999998,
+    "project": 0.003752,
+    "written": 0.00916,
+    "uncached": 0.000016
+  },
+  "perTurn": [
+    {
+      "context": 20241,
+      "growth": 0,
+      "read": 19917,
+      "stored": 322,
+      "output": 311,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 20710,
+      "growth": 469,
+      "read": 20239,
+      "stored": 469,
+      "output": 147,
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "change",
+      "name": "Bash",
+      "what": "cat >> src/page.js <<'EOF'\n\nexport const pageCount = () => Math.ceil(issues.length / perPage);\nEOF\nsed -i '' 's/import { pageOf } from/import { pageOf, pageCount } from/' test/page.test.js\ncat >> test/page.test.js <<'EOF'\n\ntest(\"the archive has three pages\", () => {\n  assert.equal(pageCount(), 3);\n});\nEOF\nnpm test 2>&1 | grep -E '^(✔|✖|ℹ (pass|fail))'",
+      "spanMs": 4628,
+      "modelMs": 4031,
+      "toolMs": 597,
+      "messageOutput": 311,
+      "sharedWith": 0,
+      "isError": false
+    }
+  ],
+  "trips": [
+    {
+      "startMs": 0,
+      "endMs": 4628,
+      "calls": [
+        {
+          "kind": "change",
+          "issuedMs": 4031,
+          "doneMs": 4628
+        }
+      ]
+    },
+    {
+      "startMs": 4628,
+      "endMs": 6469,
+      "calls": []
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "durationMs": 5864,
+    "apiMs": 15190,
+    "costUsd": 0.1175694
+  }
+}

@@ -1,0 +1,14 @@
+$ node --test
+✔ the feed lists the three newest issues with their dates (4.949708ms)
+✔ page 1 is the five newest issues (4.935708ms)
+✔ page 3 holds the two oldest (0.052125ms)
+✔ a page past the end is empty (0.367791ms)
+✔ the archive has three pages (0.07125ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 43.206416

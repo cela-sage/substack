@@ -1,0 +1,192 @@
+{
+  "model": "claude-opus-5-5",
+  "checks": {
+    "outputFromMessages": 782,
+    "outputFromResult": 782,
+    "costFromParts": 0.0940342,
+    "costReported": 0.0940342,
+    "reportCoversEarlierSessions": false,
+    "messages": 4,
+    "numTurns": 4,
+    "permissionDenials": 0
+  },
+  "callsByKind": {
+    "look": 1,
+    "run": 1,
+    "change": 1
+  },
+  "callsByName": {
+    "Bash": 3
+  },
+  "spanMsByKind": {
+    "look": 3254,
+    "run": 2016,
+    "change": 2791
+  },
+  "directorSplit": {
+    "readGrepGlob": 0,
+    "editWriteBash": 3
+  },
+  "tokens": {
+    "baselinePerTurn": 17233,
+    "baselineResent": 68932,
+    "growth": 5154,
+    "readTotal": 74086,
+    "cachedTotal": 65931,
+    "written": 782,
+    "parts": {
+      "input": 8,
+      "cacheRead": 65931,
+      "cacheWrite5m": 0,
+      "cacheWrite1h": 8147,
+      "output": 782
+    },
+    "setup": {
+      "stored": 5461,
+      "read": 63467
+    },
+    "project": {
+      "stored": 2686,
+      "read": 2464
+    }
+  },
+  "costUsd": {
+    "input": 0.000032,
+    "cacheRead": 0.0131862,
+    "cacheWrite": 0.065176,
+    "output": 0.01564
+  },
+  "costBySource": {
+    "setup": 0.0563814,
+    "project": 0.021980799999999998,
+    "written": 0.01564,
+    "uncached": 0.000032
+  },
+  "costIfDeskEmpty": {
+    "setup": 0.14820339999999999,
+    "project": 0.021980799999999998,
+    "written": 0.01564,
+    "uncached": 0.000032
+  },
+  "perTurn": [
+    {
+      "context": 17233,
+      "growth": 0,
+      "read": 11770,
+      "stored": 5461,
+      "output": 134,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 17482,
+      "growth": 249,
+      "read": 17231,
+      "stored": 249,
+      "output": 158,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 19452,
+      "growth": 2219,
+      "read": 17480,
+      "stored": 1970,
+      "output": 243,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 19919,
+      "growth": 2686,
+      "read": 19450,
+      "stored": 467,
+      "output": 247,
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "look",
+      "name": "Bash",
+      "what": "git ls-files | head -50",
+      "spanMs": 3254,
+      "modelMs": 2805,
+      "toolMs": 449,
+      "messageOutput": 134,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "cat package.json src/*.js test/*.js && npm test 2>&1 | tail -40",
+      "spanMs": 2016,
+      "modelMs": 1788,
+      "toolMs": 228,
+      "messageOutput": 158,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "change",
+      "name": "Bash",
+      "what": "grep -rn offset src test README.md; printf 'export const offset = (page, perPage) => (page - 1) * perPage;\\n' > src/offset.js && npm test 2>&1 | tail -10",
+      "spanMs": 2791,
+      "modelMs": 2583,
+      "toolMs": 208,
+      "messageOutput": 243,
+      "sharedWith": 0,
+      "isError": false
+    }
+  ],
+  "trips": [
+    {
+      "startMs": 0,
+      "endMs": 3254,
+      "calls": [
+        {
+          "kind": "look",
+          "issuedMs": 2805,
+          "doneMs": 3254
+        }
+      ]
+    },
+    {
+      "startMs": 3254,
+      "endMs": 5270,
+      "calls": [
+        {
+          "kind": "run",
+          "issuedMs": 5042,
+          "doneMs": 5270
+        }
+      ]
+    },
+    {
+      "startMs": 5270,
+      "endMs": 8061,
+      "calls": [
+        {
+          "kind": "change",
+          "issuedMs": 7853,
+          "doneMs": 8061
+        }
+      ]
+    },
+    {
+      "startMs": 8061,
+      "endMs": 11386,
+      "calls": []
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "durationMs": 10777,
+    "apiMs": 9922,
+    "costUsd": 0.0940342
+  }
+}

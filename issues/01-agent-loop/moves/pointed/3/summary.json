@@ -1,0 +1,242 @@
+{
+  "model": "claude-opus-5-5",
+  "checks": {
+    "outputFromMessages": 1070,
+    "outputFromResult": 1070,
+    "costFromParts": 0.1078632,
+    "costReported": 0.1078632,
+    "reportCoversEarlierSessions": false,
+    "messages": 5,
+    "numTurns": 6,
+    "permissionDenials": 0
+  },
+  "callsByKind": {
+    "run": 2,
+    "look": 2,
+    "change": 1
+  },
+  "callsByName": {
+    "Bash": 4,
+    "Edit": 1
+  },
+  "spanMsByKind": {
+    "run": 7052,
+    "look": 4195,
+    "change": 1893
+  },
+  "directorSplit": {
+    "readGrepGlob": 0,
+    "editWriteBash": 5
+  },
+  "tokens": {
+    "baselinePerTurn": 17256,
+    "baselineResent": 86280,
+    "growth": 9198,
+    "readTotal": 95478,
+    "cachedTotal": 86836,
+    "written": 1070,
+    "parts": {
+      "input": 10,
+      "cacheRead": 86836,
+      "cacheWrite5m": 0,
+      "cacheWrite1h": 8632,
+      "output": 1070
+    },
+    "setup": {
+      "stored": 5484,
+      "read": 80792
+    },
+    "project": {
+      "stored": 3148,
+      "read": 6044
+    }
+  },
+  "costUsd": {
+    "input": 0.00004,
+    "cacheRead": 0.0173672,
+    "cacheWrite": 0.069056,
+    "output": 0.0214
+  },
+  "costBySource": {
+    "setup": 0.060030400000000005,
+    "project": 0.0263928,
+    "written": 0.0214,
+    "uncached": 0.00004
+  },
+  "costIfDeskEmpty": {
+    "setup": 0.1518524,
+    "project": 0.0263928,
+    "written": 0.0214,
+    "uncached": 0.00004
+  },
+  "perTurn": [
+    {
+      "context": 17256,
+      "growth": 0,
+      "read": 11770,
+      "stored": 5484,
+      "output": 166,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 18364,
+      "growth": 1108,
+      "read": 17254,
+      "stored": 1108,
+      "output": 153,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 19586,
+      "growth": 2330,
+      "read": 18362,
+      "stored": 1222,
+      "output": 181,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 19868,
+      "growth": 2612,
+      "read": 19584,
+      "stored": 282,
+      "output": 310,
+      "tools": [
+        "Edit",
+        "Bash"
+      ]
+    },
+    {
+      "context": 20404,
+      "growth": 3148,
+      "read": 19866,
+      "stored": 536,
+      "output": 260,
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "git ls-files | grep -v node_modules | head -50 && cat package.json && pnpm test 2>&1 | tail -40",
+      "spanMs": 3956,
+      "modelMs": 3034,
+      "toolMs": 922,
+      "messageOutput": 166,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "look",
+      "name": "Bash",
+      "what": "for f in src/*.js test/*.js; do echo \"== $f\"; cat $f; done",
+      "spanMs": 2053,
+      "modelMs": 1981,
+      "toolMs": 72,
+      "messageOutput": 153,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "look",
+      "name": "Bash",
+      "what": "grep -rn \"offset\" src test README.md",
+      "spanMs": 2142,
+      "modelMs": 2086,
+      "toolMs": 56,
+      "messageOutput": 181,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "change",
+      "name": "Edit",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.kng3lFrO5y/src/offset.js",
+      "spanMs": 1893,
+      "modelMs": 1859,
+      "toolMs": 34,
+      "messageOutput": 310,
+      "sharedWith": 1,
+      "isError": false
+    },
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "pnpm test 2>&1 | grep -E \"^ℹ|✖\"",
+      "spanMs": 3096,
+      "modelMs": 2794,
+      "toolMs": 302,
+      "messageOutput": 310,
+      "sharedWith": 1,
+      "isError": false
+    }
+  ],
+  "trips": [
+    {
+      "startMs": 0,
+      "endMs": 3956,
+      "calls": [
+        {
+          "kind": "run",
+          "issuedMs": 3034,
+          "doneMs": 3956
+        }
+      ]
+    },
+    {
+      "startMs": 3956,
+      "endMs": 6009,
+      "calls": [
+        {
+          "kind": "look",
+          "issuedMs": 5937,
+          "doneMs": 6009
+        }
+      ]
+    },
+    {
+      "startMs": 6009,
+      "endMs": 8151,
+      "calls": [
+        {
+          "kind": "look",
+          "issuedMs": 8095,
+          "doneMs": 8151
+        }
+      ]
+    },
+    {
+      "startMs": 8151,
+      "endMs": 11247,
+      "calls": [
+        {
+          "kind": "change",
+          "issuedMs": 10010,
+          "doneMs": 10044
+        },
+        {
+          "kind": "run",
+          "issuedMs": 10945,
+          "doneMs": 11247
+        }
+      ]
+    },
+    {
+      "startMs": 11247,
+      "endMs": 14309,
+      "calls": []
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "durationMs": 13738,
+    "apiMs": 12418,
+    "costUsd": 0.1078632
+  }
+}

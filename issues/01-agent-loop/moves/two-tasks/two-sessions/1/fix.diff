@@ -1,0 +1,7 @@
+diff --git a/src/offset.js b/src/offset.js
+index ceca447..172df20 100644
+--- a/src/offset.js
++++ b/src/offset.js
+@@ -1 +1 @@
+-export const offset = (page, perPage) => page * perPage;
++export const offset = (page, perPage) => (page - 1) * perPage;

@@ -1,0 +1,245 @@
+{
+  "model": "claude-opus-5-5",
+  "checks": {
+    "outputFromMessages": 1243,
+    "outputFromResult": 1243,
+    "costFromParts": 0.09146599999999999,
+    "costReported": 0.091466,
+    "reportCoversEarlierSessions": false,
+    "messages": 4,
+    "numTurns": 7,
+    "permissionDenials": 0
+  },
+  "callsByKind": {
+    "look": 2,
+    "change": 3,
+    "run": 1
+  },
+  "callsByName": {
+    "Bash": 2,
+    "Read": 1,
+    "Edit": 3
+  },
+  "spanMsByKind": {
+    "look": 5508,
+    "change": 11155,
+    "run": 6040
+  },
+  "directorSplit": {
+    "readGrepGlob": 1,
+    "editWriteBash": 5
+  },
+  "tokens": {
+    "baselinePerTurn": 17264,
+    "baselineResent": 69056,
+    "growth": 5525,
+    "readTotal": 74581,
+    "cachedTotal": 67950,
+    "written": 1243,
+    "parts": {
+      "input": 8,
+      "cacheRead": 67950,
+      "cacheWrite5m": 0,
+      "cacheWrite1h": 6623,
+      "output": 1243
+    },
+    "setup": {
+      "stored": 3791,
+      "read": 65261
+    },
+    "project": {
+      "stored": 2832,
+      "read": 2689
+    }
+  },
+  "costUsd": {
+    "input": 0.000032,
+    "cacheRead": 0.01359,
+    "cacheWrite": 0.052984,
+    "output": 0.02486
+  },
+  "costBySource": {
+    "setup": 0.043380199999999994,
+    "project": 0.0231938,
+    "written": 0.02486,
+    "uncached": 0.000032
+  },
+  "costIfDeskEmpty": {
+    "setup": 0.14847,
+    "project": 0.0231938,
+    "written": 0.02486,
+    "uncached": 0.000032
+  },
+  "perTurn": [
+    {
+      "context": 17264,
+      "growth": 0,
+      "read": 13471,
+      "stored": 3791,
+      "output": 163,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 18411,
+      "growth": 1147,
+      "read": 17262,
+      "stored": 1147,
+      "output": 157,
+      "tools": [
+        "Read"
+      ]
+    },
+    {
+      "context": 18810,
+      "growth": 1546,
+      "read": 18409,
+      "stored": 399,
+      "output": 728,
+      "tools": [
+        "Edit",
+        "Edit",
+        "Edit",
+        "Bash"
+      ]
+    },
+    {
+      "context": 20096,
+      "growth": 2832,
+      "read": 18808,
+      "stored": 1286,
+      "output": 195,
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "look",
+      "name": "Bash",
+      "what": "git ls-files && cat package.json; cat src/*.js; ls test* 2>/dev/null; git diff",
+      "spanMs": 3774,
+      "modelMs": 3339,
+      "toolMs": 435,
+      "messageOutput": 163,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "look",
+      "name": "Read",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.UC95KJfnyC/test/page.test.js",
+      "spanMs": 1734,
+      "modelMs": 1725,
+      "toolMs": 9,
+      "messageOutput": 157,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "change",
+      "name": "Edit",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.UC95KJfnyC/src/page.js",
+      "spanMs": 2511,
+      "modelMs": 2497,
+      "toolMs": 14,
+      "messageOutput": 728,
+      "sharedWith": 3,
+      "isError": false
+    },
+    {
+      "kind": "change",
+      "name": "Edit",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.UC95KJfnyC/test/page.test.js",
+      "spanMs": 3652,
+      "modelMs": 3647,
+      "toolMs": 5,
+      "messageOutput": 728,
+      "sharedWith": 3,
+      "isError": false
+    },
+    {
+      "kind": "change",
+      "name": "Edit",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.UC95KJfnyC/test/page.test.js",
+      "spanMs": 4992,
+      "modelMs": 4985,
+      "toolMs": 7,
+      "messageOutput": 728,
+      "sharedWith": 3,
+      "isError": false
+    },
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "node --test 2>&1 | tail -15",
+      "spanMs": 6040,
+      "modelMs": 5941,
+      "toolMs": 99,
+      "messageOutput": 728,
+      "sharedWith": 3,
+      "isError": false
+    }
+  ],
+  "trips": [
+    {
+      "startMs": 0,
+      "endMs": 3774,
+      "calls": [
+        {
+          "kind": "look",
+          "issuedMs": 3339,
+          "doneMs": 3774
+        }
+      ]
+    },
+    {
+      "startMs": 3774,
+      "endMs": 5508,
+      "calls": [
+        {
+          "kind": "look",
+          "issuedMs": 5499,
+          "doneMs": 5508
+        }
+      ]
+    },
+    {
+      "startMs": 5508,
+      "endMs": 11548,
+      "calls": [
+        {
+          "kind": "change",
+          "issuedMs": 8005,
+          "doneMs": 8019
+        },
+        {
+          "kind": "change",
+          "issuedMs": 9155,
+          "doneMs": 9160
+        },
+        {
+          "kind": "change",
+          "issuedMs": 10493,
+          "doneMs": 10500
+        },
+        {
+          "kind": "run",
+          "issuedMs": 11449,
+          "doneMs": 11548
+        }
+      ]
+    },
+    {
+      "startMs": 11548,
+      "endMs": 13962,
+      "calls": []
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "durationMs": 13109,
+    "apiMs": 12552,
+    "costUsd": 0.091466
+  }
+}

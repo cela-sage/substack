@@ -1,0 +1,37 @@
+diff --git a/src/offset.js b/src/offset.js
+index ceca447..172df20 100644
+--- a/src/offset.js
++++ b/src/offset.js
+@@ -1 +1 @@
+-export const offset = (page, perPage) => page * perPage;
++export const offset = (page, perPage) => (page - 1) * perPage;
+diff --git a/src/page.js b/src/page.js
+index 6d067b1..a337d7f 100644
+--- a/src/page.js
++++ b/src/page.js
+@@ -10,3 +10,5 @@ export const pageOf = (page) => {
+     .slice(start, start + perPage)
+     .map((issue) => issue.number);
+ };
++
++export const pageCount = () => Math.ceil(issues.length / perPage);
+diff --git a/test/page.test.js b/test/page.test.js
+index c9d3c00..af95fc9 100644
+--- a/test/page.test.js
++++ b/test/page.test.js
+@@ -1,6 +1,6 @@
+ import { test } from "node:test";
+ import assert from "node:assert/strict";
+-import { pageOf } from "../src/page.js";
++import { pageOf, pageCount } from "../src/page.js";
+ 
+ test("page 1 is the five newest issues", () => {
+   assert.deepEqual(pageOf(1), [12, 11, 10, 9, 8]);
+@@ -13,3 +13,7 @@ test("page 3 holds the two oldest", () => {
+ test("a page past the end is empty", () => {
+   assert.deepEqual(pageOf(4), []);
+ });
++
++test("the archive has three pages", () => {
++  assert.equal(pageCount(), 3);
++});
