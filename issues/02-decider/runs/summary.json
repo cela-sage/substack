@@ -1,0 +1,131 @@
+{
+  "jev": {
+    "model": "typesafe/jev-1.13",
+    "served": [
+      "typesafe/jev-1.13-20260917"
+    ],
+    "kind": {
+      "en": "20/20",
+      "it": "20/20"
+    },
+    "risk": {
+      "en": "19/20",
+      "it": "19/20"
+    },
+    "medianMs": 267,
+    "worstMs": 504,
+    "usdPerThousand": 0.027,
+    "disagreements": [
+      {
+        "id": "en-20",
+        "text": "Buy milk, eggs and coffee on the way home.",
+        "labelled": {
+          "kind": "dictation",
+          "risky": false
+        },
+        "answered": {
+          "kind": "dictation",
+          "risky": true
+        }
+      },
+      {
+        "id": "it-20",
+        "text": "Comprare latte, uova e caffè tornando a casa.",
+        "labelled": {
+          "kind": "dictation",
+          "risky": false
+        },
+        "answered": {
+          "kind": "dictation",
+          "risky": true
+        }
+      }
+    ]
+  },
+  "luna": {
+    "model": "openai/gpt-6-luna",
+    "served": [
+      "openai/gpt-6-luna"
+    ],
+    "kind": {
+      "en": "19/20",
+      "it": "19/20"
+    },
+    "risk": {
+      "en": "19/20",
+      "it": "19/20"
+    },
+    "medianMs": 2159,
+    "worstMs": 2987,
+    "usdPerThousand": 0.0473,
+    "disagreements": [
+      {
+        "id": "en-20",
+        "text": "Buy milk, eggs and coffee on the way home.",
+        "labelled": {
+          "kind": "dictation",
+          "risky": false
+        },
+        "answered": {
+          "kind": "request",
+          "risky": true
+        }
+      },
+      {
+        "id": "it-20",
+        "text": "Comprare latte, uova e caffè tornando a casa.",
+        "labelled": {
+          "kind": "dictation",
+          "risky": false
+        },
+        "answered": {
+          "kind": "request",
+          "risky": true
+        }
+      }
+    ]
+  },
+  "luna-reasoning-off": {
+    "model": "openai/gpt-6-luna",
+    "served": [
+      "openai/gpt-6-luna"
+    ],
+    "kind": {
+      "en": "19/20",
+      "it": "19/20"
+    },
+    "risk": {
+      "en": "19/20",
+      "it": "19/20"
+    },
+    "medianMs": 971,
+    "worstMs": 1542,
+    "usdPerThousand": 0.0309,
+    "disagreements": [
+      {
+        "id": "en-20",
+        "text": "Buy milk, eggs and coffee on the way home.",
+        "labelled": {
+          "kind": "dictation",
+          "risky": false
+        },
+        "answered": {
+          "kind": "request",
+          "risky": true
+        }
+      },
+      {
+        "id": "it-20",
+        "text": "Comprare latte, uova e caffè tornando a casa.",
+        "labelled": {
+          "kind": "dictation",
+          "risky": false
+        },
+        "answered": {
+          "kind": "request",
+          "risky": true
+        }
+      }
+    ]
+  }
+}

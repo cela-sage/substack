@@ -1,0 +1,23 @@
+{
+  "ranAt": "2026-09-29T21:52:08.785Z",
+  "summary": {
+    "jev": {
+      "model": "typesafe/jev-1.13",
+      "correct": 40,
+      "of": 40,
+      "medianMs": 295,
+      "p90Ms": 547,
+      "usdPerThousand": 0.0268,
+      "misses": []
+    },
+    "luna": {
+      "model": "openai/gpt-6-luna",
+      "correct": 40,
+      "of": 40,
+      "medianMs": 964,
+      "p90Ms": 1213,
+      "usdPerThousand": 0.0268,
+      "misses": []
+    }
+  }
+}
