@@ -1,0 +1,64 @@
+{
+  "probes": [
+    {
+      "variant": "stock",
+      "tools": 27,
+      "read": 11877,
+      "stored": 5452,
+      "input": 2,
+      "perTrip": 17331,
+      "delta": 0,
+      "centsPerReread": 0,
+      "centsFirstTrip": 0,
+      "centsPerFixArithmetic": 0
+    },
+    {
+      "variant": "claude-md",
+      "tools": 27,
+      "read": 11877,
+      "stored": 7934,
+      "input": 2,
+      "perTrip": 19813,
+      "delta": 2482,
+      "centsPerReread": 0.05,
+      "centsFirstTrip": 1.986,
+      "centsPerFixArithmetic": 2.135
+    },
+    {
+      "variant": "mcp",
+      "tools": 41,
+      "read": 11877,
+      "stored": 5659,
+      "input": 2,
+      "perTrip": 17538,
+      "delta": 207,
+      "centsPerReread": 0.004,
+      "centsFirstTrip": 0.166,
+      "centsPerFixArithmetic": 0.178
+    },
+    {
+      "variant": "both",
+      "tools": 41,
+      "read": 11877,
+      "stored": 8150,
+      "input": 2,
+      "perTrip": 20029,
+      "delta": 2698,
+      "centsPerReread": 0.054,
+      "centsFirstTrip": 2.158,
+      "centsPerFixArithmetic": 2.32
+    }
+  ],
+  "fullRuns": {
+    "stock": {
+      "trips": 4,
+      "costUsd": 0.1001656,
+      "setupUsd": 0.0564756
+    },
+    "both": {
+      "trips": 4,
+      "costUsd": 0.130172,
+      "setupUsd": 0.079644
+    }
+  }
+}

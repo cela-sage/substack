@@ -1,0 +1,210 @@
+{
+  "model": "claude-opus-5-5",
+  "checks": {
+    "outputFromMessages": 1278,
+    "outputFromResult": 1278,
+    "costFromParts": 0.130172,
+    "costReported": 0.130172,
+    "reportCoversEarlierSessions": false,
+    "messages": 4,
+    "numTurns": 5,
+    "permissionDenials": 0
+  },
+  "callsByKind": {
+    "run": 2,
+    "look": 1,
+    "change": 1
+  },
+  "callsByName": {
+    "Bash": 3,
+    "Edit": 1
+  },
+  "spanMsByKind": {
+    "run": 7645,
+    "look": 3281,
+    "change": 2325
+  },
+  "directorSplit": {
+    "readGrepGlob": 0,
+    "editWriteBash": 4
+  },
+  "tokens": {
+    "baselinePerTurn": 20035,
+    "baselineResent": 80140,
+    "growth": 7060,
+    "readTotal": 87200,
+    "cachedTotal": 76020,
+    "written": 1278,
+    "parts": {
+      "input": 8,
+      "cacheRead": 76020,
+      "cacheWrite5m": 0,
+      "cacheWrite1h": 11172,
+      "output": 1278
+    },
+    "setup": {
+      "stored": 8156,
+      "read": 71980
+    },
+    "project": {
+      "stored": 3016,
+      "read": 4040
+    }
+  },
+  "costUsd": {
+    "input": 0.000032,
+    "cacheRead": 0.015204,
+    "cacheWrite": 0.089376,
+    "output": 0.02556
+  },
+  "costBySource": {
+    "setup": 0.079644,
+    "project": 0.024936,
+    "written": 0.02556,
+    "uncached": 0.000032
+  },
+  "costIfDeskEmpty": {
+    "setup": 0.1723006,
+    "project": 0.024936,
+    "written": 0.02556,
+    "uncached": 0.000032
+  },
+  "perTurn": [
+    {
+      "context": 20035,
+      "growth": 0,
+      "read": 11877,
+      "stored": 8156,
+      "output": 155,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 21713,
+      "growth": 1678,
+      "read": 20033,
+      "stored": 1678,
+      "output": 281,
+      "tools": [
+        "Bash"
+      ]
+    },
+    {
+      "context": 22401,
+      "growth": 2366,
+      "read": 21711,
+      "stored": 688,
+      "output": 330,
+      "tools": [
+        "Edit",
+        "Bash"
+      ]
+    },
+    {
+      "context": 23051,
+      "growth": 3016,
+      "read": 22399,
+      "stored": 650,
+      "output": 512,
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "pnpm test 2>&1 | tail -50; cat src/*.js; ls test",
+      "spanMs": 4267,
+      "modelMs": 3053,
+      "toolMs": 1214,
+      "messageOutput": 155,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "look",
+      "name": "Bash",
+      "what": "cat test/*.js; grep -rn offset src test",
+      "spanMs": 3281,
+      "modelMs": 3239,
+      "toolMs": 42,
+      "messageOutput": 281,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "change",
+      "name": "Edit",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.LI0qvbX7uT/src/offset.js",
+      "spanMs": 2325,
+      "modelMs": 2317,
+      "toolMs": 8,
+      "messageOutput": 330,
+      "sharedWith": 1,
+      "isError": false
+    },
+    {
+      "kind": "run",
+      "name": "Bash",
+      "what": "pnpm test 2>&1 | tail -12",
+      "spanMs": 3378,
+      "modelMs": 3094,
+      "toolMs": 284,
+      "messageOutput": 330,
+      "sharedWith": 1,
+      "isError": false
+    }
+  ],
+  "trips": [
+    {
+      "startMs": 0,
+      "endMs": 4267,
+      "calls": [
+        {
+          "kind": "run",
+          "issuedMs": 3053,
+          "doneMs": 4267
+        }
+      ]
+    },
+    {
+      "startMs": 4267,
+      "endMs": 7548,
+      "calls": [
+        {
+          "kind": "look",
+          "issuedMs": 7506,
+          "doneMs": 7548
+        }
+      ]
+    },
+    {
+      "startMs": 7548,
+      "endMs": 10926,
+      "calls": [
+        {
+          "kind": "change",
+          "issuedMs": 9865,
+          "doneMs": 9873
+        },
+        {
+          "kind": "run",
+          "issuedMs": 10642,
+          "doneMs": 10926
+        }
+      ]
+    },
+    {
+      "startMs": 10926,
+      "endMs": 16207,
+      "calls": []
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "durationMs": 15607,
+    "apiMs": 14062,
+    "costUsd": 0.130172
+  }
+}

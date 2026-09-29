@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "node",
+      "args": [
+        "setups/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js",
+        "/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.EQMipQvcse"
+      ]
+    }
+  }
+}

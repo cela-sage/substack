@@ -1,0 +1,157 @@
+{
+  "model": "claude-opus-5-5",
+  "checks": {
+    "outputFromMessages": 286,
+    "outputFromResult": 286,
+    "costFromParts": 0.08585419999999999,
+    "costReported": 0.08585419999999999,
+    "reportCoversEarlierSessions": false,
+    "messages": 3,
+    "numTurns": 3,
+    "permissionDenials": 0
+  },
+  "callsByKind": {
+    "other": 2
+  },
+  "callsByName": {
+    "ToolSearch": 1,
+    "mcp__filesystem__list_directory": 1
+  },
+  "spanMsByKind": {
+    "other": 4105
+  },
+  "directorSplit": {
+    "readGrepGlob": 0,
+    "editWriteBash": 0
+  },
+  "tokens": {
+    "baselinePerTurn": 20040,
+    "baselineResent": 60120,
+    "growth": 864,
+    "readTotal": 60984,
+    "cachedTotal": 52271,
+    "written": 286,
+    "parts": {
+      "input": 6,
+      "cacheRead": 52271,
+      "cacheWrite5m": 0,
+      "cacheWrite1h": 8707,
+      "output": 286
+    },
+    "setup": {
+      "stored": 8161,
+      "read": 51955
+    },
+    "project": {
+      "stored": 546,
+      "read": 316
+    }
+  },
+  "costUsd": {
+    "input": 0.000024,
+    "cacheRead": 0.0104542,
+    "cacheWrite": 0.069656,
+    "output": 0.00572
+  },
+  "costBySource": {
+    "setup": 0.075679,
+    "project": 0.0044312,
+    "written": 0.00572,
+    "uncached": 0.000024
+  },
+  "costIfDeskEmpty": {
+    "setup": 0.1683356,
+    "project": 0.0044312,
+    "written": 0.00572,
+    "uncached": 0.000024
+  },
+  "perTurn": [
+    {
+      "context": 20040,
+      "growth": 0,
+      "read": 11877,
+      "stored": 8161,
+      "output": 87,
+      "tools": [
+        "ToolSearch"
+      ]
+    },
+    {
+      "context": 20358,
+      "growth": 318,
+      "read": 20038,
+      "stored": 318,
+      "output": 104,
+      "tools": [
+        "mcp__filesystem__list_directory"
+      ]
+    },
+    {
+      "context": 20586,
+      "growth": 546,
+      "read": 20356,
+      "stored": 228,
+      "output": 95,
+      "tools": []
+    }
+  ],
+  "steps": [
+    {
+      "kind": "other",
+      "name": "ToolSearch",
+      "what": "",
+      "spanMs": 2604,
+      "modelMs": 2592,
+      "toolMs": 12,
+      "messageOutput": 87,
+      "sharedWith": 0,
+      "isError": false
+    },
+    {
+      "kind": "other",
+      "name": "mcp__filesystem__list_directory",
+      "what": "",
+      "spanMs": 1501,
+      "modelMs": 1490,
+      "toolMs": 11,
+      "messageOutput": 104,
+      "sharedWith": 0,
+      "isError": false
+    }
+  ],
+  "trips": [
+    {
+      "startMs": 0,
+      "endMs": 2604,
+      "calls": [
+        {
+          "kind": "other",
+          "issuedMs": 2592,
+          "doneMs": 2604
+        }
+      ]
+    },
+    {
+      "startMs": 2604,
+      "endMs": 4105,
+      "calls": [
+        {
+          "kind": "other",
+          "issuedMs": 4094,
+          "doneMs": 4105
+        }
+      ]
+    },
+    {
+      "startMs": 4105,
+      "endMs": 5772,
+      "calls": []
+    }
+  ],
+  "result": {
+    "subtype": "success",
+    "durationMs": 5159,
+    "apiMs": 5107,
+    "costUsd": 0.08585419999999999
+  }
+}
