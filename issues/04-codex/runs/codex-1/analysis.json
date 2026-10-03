@@ -1,0 +1,97 @@
+{
+  "agent": "codex",
+  "model": "gpt-6-luna",
+  "version": "codex-cli 0.156.1",
+  "fixed": true,
+  "changedFiles": [
+    "src/offset.js"
+  ],
+  "trips": 5,
+  "callsByKind": {
+    "look": 2,
+    "run": 2,
+    "change": 1
+  },
+  "wallMs": 22870,
+  "agentMs": 20698,
+  "modelMs": 20890,
+  "toolMs": 620,
+  "firstTripCached": 11008,
+  "tokens": {
+    "read": 71436,
+    "cached": 59136,
+    "stored": 0,
+    "output": 510,
+    "reasoning": 68
+  },
+  "costUsd": 0.00207636,
+  "perTrip": [
+    {
+      "read": 13264,
+      "cached": 11008,
+      "stored": 0,
+      "output": 91,
+      "reasoning": 0,
+      "modelMs": 8116,
+      "toolMs": 144
+    },
+    {
+      "read": 13488,
+      "cached": 13056,
+      "stored": 0,
+      "output": 98,
+      "reasoning": 0,
+      "modelMs": 3105,
+      "toolMs": 14
+    },
+    {
+      "read": 13880,
+      "cached": 13056,
+      "stored": 0,
+      "output": 64,
+      "reasoning": 0,
+      "modelMs": 2114,
+      "toolMs": 220
+    },
+    {
+      "read": 15238,
+      "cached": 6912,
+      "stored": 0,
+      "output": 183,
+      "reasoning": 68,
+      "modelMs": 4264,
+      "toolMs": 242
+    },
+    {
+      "read": 15566,
+      "cached": 15104,
+      "stored": 0,
+      "output": 74,
+      "reasoning": 0,
+      "modelMs": 3291,
+      "toolMs": 0
+    }
+  ],
+  "calls": [
+    {
+      "kind": "look",
+      "what": "pwd && rg --files -g '!*node_modules*' | head -100 && git status --short"
+    },
+    {
+      "kind": "look",
+      "what": "cat package.json && sed -n '1,240p' test/feed.test.js && sed -n '1,220p' test/page.test.js && for f in src/*.js; do echo ===$f; sed -n '1,220p' \"$f\"; done"
+    },
+    {
+      "kind": "run",
+      "what": "for f in src/*.js; do echo \"=== $f\"; cat \"$f\"; done; pnpm test"
+    },
+    {
+      "kind": "run",
+      "what": "pnpm test"
+    },
+    {
+      "kind": "change",
+      "what": "apply_patch"
+    }
+  ]
+}

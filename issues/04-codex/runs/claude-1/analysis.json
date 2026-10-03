@@ -1,0 +1,84 @@
+{
+  "agent": "claude",
+  "model": "claude-opus-5-5",
+  "version": "2.1.288 (Claude Code)",
+  "fixed": true,
+  "changedFiles": [
+    "src/offset.js"
+  ],
+  "trips": 4,
+  "callsByKind": {
+    "look": 1,
+    "run": 2,
+    "change": 1
+  },
+  "wallMs": 10888,
+  "agentMs": 9766,
+  "modelMs": 9622,
+  "toolMs": 679,
+  "firstTripCached": 11877,
+  "tokens": {
+    "read": 75794,
+    "cached": 67158,
+    "stored": 8628,
+    "output": 833,
+    "reasoning": 19
+  },
+  "costUsd": 0.0991476,
+  "perTrip": [
+    {
+      "read": 17471,
+      "cached": 11877,
+      "stored": 5592,
+      "output": 159,
+      "reasoning": 0,
+      "modelMs": 2933,
+      "toolMs": 424
+    },
+    {
+      "read": 17814,
+      "cached": 17469,
+      "stored": 343,
+      "output": 174,
+      "reasoning": 0,
+      "modelMs": 1790,
+      "toolMs": 130
+    },
+    {
+      "read": 20002,
+      "cached": 17812,
+      "stored": 2188,
+      "output": 342,
+      "reasoning": 0,
+      "modelMs": 2870,
+      "toolMs": 125
+    },
+    {
+      "read": 20507,
+      "cached": 20000,
+      "stored": 505,
+      "output": 158,
+      "reasoning": 19,
+      "modelMs": 2029,
+      "toolMs": 0
+    }
+  ],
+  "calls": [
+    {
+      "kind": "look",
+      "what": "git ls-files && cat package.json pyproject.toml Makefile 2>/dev/null | head -50"
+    },
+    {
+      "kind": "run",
+      "what": "node --test 2>&1 | head -60; for f in src/*.js test/*.js README.md; do echo \"=== $f\"; cat $f; done"
+    },
+    {
+      "kind": "change",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.j9ycQYovT2/src/offset.js"
+    },
+    {
+      "kind": "run",
+      "what": "node --test 2>&1 | grep -E \"^ℹ (pass|fail)\""
+    }
+  ]
+}

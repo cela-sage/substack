@@ -1,0 +1,106 @@
+{
+  "agent": "codex",
+  "model": "gpt-6-luna",
+  "version": "codex-cli 0.156.1",
+  "fixed": true,
+  "changedFiles": [
+    "src/offset.js"
+  ],
+  "trips": 6,
+  "callsByKind": {
+    "look": 2,
+    "run": 2,
+    "change": 1
+  },
+  "wallMs": 24987,
+  "agentMs": 21871,
+  "modelMs": 22886,
+  "toolMs": 631,
+  "firstTripCached": 11008,
+  "tokens": {
+    "read": 87387,
+    "cached": 81408,
+    "stored": 0,
+    "output": 509,
+    "reasoning": 95
+  },
+  "costUsd": 0.0016664800000000001,
+  "perTrip": [
+    {
+      "read": 13278,
+      "cached": 11008,
+      "stored": 0,
+      "output": 95,
+      "reasoning": 0,
+      "modelMs": 8786,
+      "toolMs": 91
+    },
+    {
+      "read": 13508,
+      "cached": 13056,
+      "stored": 0,
+      "output": 83,
+      "reasoning": 30,
+      "modelMs": 3982,
+      "toolMs": 4
+    },
+    {
+      "read": 14384,
+      "cached": 13056,
+      "stored": 0,
+      "output": 86,
+      "reasoning": 43,
+      "modelMs": 2984,
+      "toolMs": 270
+    },
+    {
+      "read": 15222,
+      "cached": 14080,
+      "stored": 0,
+      "output": 90,
+      "reasoning": 7,
+      "modelMs": 2491,
+      "toolMs": 2
+    },
+    {
+      "read": 15336,
+      "cached": 15104,
+      "stored": 0,
+      "output": 66,
+      "reasoning": 15,
+      "modelMs": 2099,
+      "toolMs": 264
+    },
+    {
+      "read": 15659,
+      "cached": 15104,
+      "stored": 0,
+      "output": 89,
+      "reasoning": 0,
+      "modelMs": 2544,
+      "toolMs": 0
+    }
+  ],
+  "calls": [
+    {
+      "kind": "look",
+      "what": "pwd && rg --files -g '!*node_modules*' -g '!*.lock' | head -200 && git status --short"
+    },
+    {
+      "kind": "look",
+      "what": "cat package.json && cat src/*.js && cat test/*.js"
+    },
+    {
+      "kind": "run",
+      "what": "pnpm test"
+    },
+    {
+      "kind": "change",
+      "what": "apply_patch"
+    },
+    {
+      "kind": "run",
+      "what": "pnpm test && git diff -- src/offset.js"
+    }
+  ]
+}
