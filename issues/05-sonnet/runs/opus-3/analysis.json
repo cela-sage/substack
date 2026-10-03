@@ -1,0 +1,114 @@
+{
+  "agent": "claude",
+  "model": "claude-opus-5-5",
+  "version": "2.1.288 (Claude Code)",
+  "fixed": true,
+  "changedFiles": [
+    "src/offset.js"
+  ],
+  "trips": 6,
+  "callsByKind": {
+    "look": 4,
+    "run": 2,
+    "change": 1
+  },
+  "wallMs": 21096,
+  "agentMs": 20231,
+  "modelMs": 20019,
+  "toolMs": 713,
+  "firstTripCached": 11877,
+  "tokens": {
+    "read": 117129,
+    "cached": 107841,
+    "stored": 9276,
+    "output": 1258,
+    "reasoning": 40
+  },
+  "costUsd": 0.12098419999999999,
+  "perTrip": [
+    {
+      "read": 17477,
+      "cached": 11877,
+      "stored": 5598,
+      "output": 166,
+      "reasoning": 0,
+      "modelMs": 4038,
+      "toolMs": 424
+    },
+    {
+      "read": 17827,
+      "cached": 17475,
+      "stored": 350,
+      "output": 173,
+      "reasoning": 0,
+      "modelMs": 2342,
+      "toolMs": 137
+    },
+    {
+      "read": 19948,
+      "cached": 17825,
+      "stored": 2121,
+      "output": 117,
+      "reasoning": 0,
+      "modelMs": 2263,
+      "toolMs": 36
+    },
+    {
+      "read": 20166,
+      "cached": 19946,
+      "stored": 218,
+      "output": 204,
+      "reasoning": 0,
+      "modelMs": 3042,
+      "toolMs": 17
+    },
+    {
+      "read": 20556,
+      "cached": 20164,
+      "stored": 390,
+      "output": 324,
+      "reasoning": 0,
+      "modelMs": 3949,
+      "toolMs": 99
+    },
+    {
+      "read": 21155,
+      "cached": 20554,
+      "stored": 599,
+      "output": 274,
+      "reasoning": 40,
+      "modelMs": 4385,
+      "toolMs": 0
+    }
+  ],
+  "calls": [
+    {
+      "kind": "look",
+      "what": "git ls-files | head -50 && cat package.json pyproject.toml Makefile 2>/dev/null | head -40"
+    },
+    {
+      "kind": "run",
+      "what": "node --test 2>&1 | head -60; for f in src/*.js test/*.js; do echo \"=== $f\"; cat $f; done"
+    },
+    {
+      "kind": "look",
+      "what": "offset"
+    },
+    {
+      "kind": "look",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.AaNfTt6Qk1/src/offset.js"
+    },
+    {
+      "kind": "look",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.AaNfTt6Qk1/README.md"
+    },
+    {
+      "kind": "change",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.AaNfTt6Qk1/src/offset.js"
+    },
+    {
+      "kind": "run",
+      "what": "node --test 2>&1 | grep -E \"^(✔|✖|ℹ (pass|fail))\""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+✓ Lockfile passes supply-chain policies (verified 17s ago)
+Already up to date
+
+Done in 167ms using pnpm v11.24.0
+$ node --test
+✔ the feed lists the three newest issues with their dates (5.028083ms)
+✔ page 1 is the five newest issues (5.025917ms)
+✔ page 3 holds the two oldest (0.052625ms)
+✔ a page past the end is empty (0.51525ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 40.590042

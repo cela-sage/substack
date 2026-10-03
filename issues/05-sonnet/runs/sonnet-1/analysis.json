@@ -1,0 +1,110 @@
+{
+  "agent": "claude",
+  "model": "claude-sonnet-5-5",
+  "version": "2.1.288 (Claude Code)",
+  "fixed": true,
+  "changedFiles": [
+    "src/offset.js"
+  ],
+  "trips": 6,
+  "callsByKind": {
+    "run": 2,
+    "look": 3,
+    "change": 1
+  },
+  "wallMs": 12049,
+  "agentMs": 10932,
+  "modelMs": 10618,
+  "toolMs": 856,
+  "firstTripCached": 11877,
+  "tokens": {
+    "read": 113819,
+    "cached": 105548,
+    "stored": 8259,
+    "output": 820,
+    "reasoning": 0
+  },
+  "costUsd": 0.0623696,
+  "perTrip": [
+    {
+      "read": 17481,
+      "cached": 11877,
+      "stored": 5602,
+      "output": 95,
+      "reasoning": 0,
+      "modelMs": 2386,
+      "toolMs": 530
+    },
+    {
+      "read": 18448,
+      "cached": 17479,
+      "stored": 967,
+      "output": 67,
+      "reasoning": 0,
+      "modelMs": 1946,
+      "toolMs": 49
+    },
+    {
+      "read": 18879,
+      "cached": 18446,
+      "stored": 431,
+      "output": 73,
+      "reasoning": 0,
+      "modelMs": 1016,
+      "toolMs": 51
+    },
+    {
+      "read": 19276,
+      "cached": 18877,
+      "stored": 397,
+      "output": 220,
+      "reasoning": 0,
+      "modelMs": 1932,
+      "toolMs": 37
+    },
+    {
+      "read": 19597,
+      "cached": 19274,
+      "stored": 321,
+      "output": 221,
+      "reasoning": 0,
+      "modelMs": 1705,
+      "toolMs": 189
+    },
+    {
+      "read": 20138,
+      "cached": 19595,
+      "stored": 541,
+      "output": 144,
+      "reasoning": 0,
+      "modelMs": 1633,
+      "toolMs": 0
+    }
+  ],
+  "calls": [
+    {
+      "kind": "run",
+      "what": "ls; cat package.json 2>/dev/null | head -30; (npm test 2>&1 || pytest 2>&1 || true) | tail -40"
+    },
+    {
+      "kind": "look",
+      "what": "cat test/page.test.js; ls src; cat src/*page* "
+    },
+    {
+      "kind": "look",
+      "what": "cat src/offset.js src/newest-first.js; head -20 src/issues.js"
+    },
+    {
+      "kind": "look",
+      "what": "offset"
+    },
+    {
+      "kind": "change",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.o9z0KZjNuB/src/offset.js"
+    },
+    {
+      "kind": "run",
+      "what": "npm test 2>&1 | tail -12"
+    }
+  ]
+}

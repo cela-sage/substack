@@ -1,0 +1,97 @@
+{
+  "agent": "claude",
+  "model": "claude-opus-5-5",
+  "version": "2.1.288 (Claude Code)",
+  "fixed": true,
+  "changedFiles": [
+    "src/offset.js"
+  ],
+  "trips": 5,
+  "callsByKind": {
+    "look": 2,
+    "run": 2,
+    "change": 1
+  },
+  "wallMs": 13919,
+  "agentMs": 12835,
+  "modelMs": 12442,
+  "toolMs": 883,
+  "firstTripCached": 11877,
+  "tokens": {
+    "read": 95676,
+    "cached": 86910,
+    "stored": 8756,
+    "output": 1018,
+    "reasoning": 22
+  },
+  "costUsd": 0.10783,
+  "perTrip": [
+    {
+      "read": 17473,
+      "cached": 11877,
+      "stored": 5594,
+      "output": 132,
+      "reasoning": 0,
+      "modelMs": 2683,
+      "toolMs": 428
+    },
+    {
+      "read": 17720,
+      "cached": 17471,
+      "stored": 247,
+      "output": 177,
+      "reasoning": 0,
+      "modelMs": 1759,
+      "toolMs": 226
+    },
+    {
+      "read": 19782,
+      "cached": 17718,
+      "stored": 2062,
+      "output": 183,
+      "reasoning": 0,
+      "modelMs": 1906,
+      "toolMs": 48
+    },
+    {
+      "read": 20066,
+      "cached": 19780,
+      "stored": 284,
+      "output": 300,
+      "reasoning": 0,
+      "modelMs": 3060,
+      "toolMs": 181
+    },
+    {
+      "read": 20635,
+      "cached": 20064,
+      "stored": 569,
+      "output": 226,
+      "reasoning": 22,
+      "modelMs": 3034,
+      "toolMs": 0
+    }
+  ],
+  "calls": [
+    {
+      "kind": "look",
+      "what": "git ls-files | head -50"
+    },
+    {
+      "kind": "run",
+      "what": "cat package.json; for f in src/*.js test/*.js; do echo \"=== $f\"; cat $f; done; npm test 2>&1 | tail -40"
+    },
+    {
+      "kind": "look",
+      "what": "offset"
+    },
+    {
+      "kind": "change",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.eSH8En3meJ/src/offset.js"
+    },
+    {
+      "kind": "run",
+      "what": "npm test 2>&1 | tail -10"
+    }
+  ]
+}

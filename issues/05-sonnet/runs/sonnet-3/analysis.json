@@ -1,0 +1,123 @@
+{
+  "agent": "claude",
+  "model": "claude-sonnet-5-5",
+  "version": "2.1.288 (Claude Code)",
+  "fixed": true,
+  "changedFiles": [
+    "src/offset.js"
+  ],
+  "trips": 7,
+  "callsByKind": {
+    "run": 3,
+    "look": 2,
+    "change": 2
+  },
+  "wallMs": 16804,
+  "agentMs": 15829,
+  "modelMs": 15332,
+  "toolMs": 1080,
+  "firstTripCached": 11877,
+  "tokens": {
+    "read": 133847,
+    "cached": 125469,
+    "stored": 8364,
+    "output": 846,
+    "reasoning": 24
+  },
+  "costUsd": 0.06703780000000001,
+  "perTrip": [
+    {
+      "read": 17478,
+      "cached": 11877,
+      "stored": 5599,
+      "output": 90,
+      "reasoning": 0,
+      "modelMs": 2859,
+      "toolMs": 548
+    },
+    {
+      "read": 18451,
+      "cached": 17476,
+      "stored": 973,
+      "output": 75,
+      "reasoning": 0,
+      "modelMs": 1693,
+      "toolMs": 65
+    },
+    {
+      "read": 18890,
+      "cached": 18449,
+      "stored": 439,
+      "output": 73,
+      "reasoning": 0,
+      "modelMs": 1590,
+      "toolMs": 52
+    },
+    {
+      "read": 19287,
+      "cached": 18888,
+      "stored": 397,
+      "output": 157,
+      "reasoning": 0,
+      "modelMs": 2701,
+      "toolMs": 49
+    },
+    {
+      "read": 19542,
+      "cached": 19285,
+      "stored": 255,
+      "output": 258,
+      "reasoning": 0,
+      "modelMs": 2736,
+      "toolMs": 180
+    },
+    {
+      "read": 19956,
+      "cached": 19540,
+      "stored": 414,
+      "output": 85,
+      "reasoning": 24,
+      "modelMs": 1773,
+      "toolMs": 186
+    },
+    {
+      "read": 20243,
+      "cached": 19954,
+      "stored": 287,
+      "output": 108,
+      "reasoning": 0,
+      "modelMs": 1980,
+      "toolMs": 0
+    }
+  ],
+  "calls": [
+    {
+      "kind": "run",
+      "what": "ls; cat package.json 2>/dev/null | head -20; (npm test || pytest || make test) 2>&1 | tail -40"
+    },
+    {
+      "kind": "look",
+      "what": "cat test/page.test.js; ls src; cat src/*page* 2>/dev/null"
+    },
+    {
+      "kind": "look",
+      "what": "cat src/offset.js src/newest-first.js; head -20 src/issues.js"
+    },
+    {
+      "kind": "change",
+      "what": "grep -rn \"offset\" src | grep -v \"^src/offset.js\"; sed -i 's/page \\* perPage/(page - 1) * perPage/' src/offset.js && npm test 2>&1 | grep -E \"^# (pass|fail)\""
+    },
+    {
+      "kind": "change",
+      "what": "/private/var/folders/dm/w7qx09bd6sl715ck1d953lh80000gn/T/tmp.TVmNEcK87y/src/offset.js"
+    },
+    {
+      "kind": "run",
+      "what": "npm test 2>&1 | grep -E \"^# (pass|fail)\""
+    },
+    {
+      "kind": "run",
+      "what": "npm test 2>&1 | tail -12"
+    }
+  ]
+}
